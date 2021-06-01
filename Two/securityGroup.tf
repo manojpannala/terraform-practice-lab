@@ -6,7 +6,7 @@ data "aws_ip_ranges" "eu_central_ip_range" {
 resource "aws_security_group" "sg-custom_eu_central" {
   name = "custom_eu_central"
 
-  ingress =  {
+  ingress {
     cidr_blocks = data.aws_ip_ranges.eu_central_ip_range.cidr_blocks
     description = "value"
     from_port = "443"
