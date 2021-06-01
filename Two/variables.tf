@@ -2,6 +2,9 @@
 #     type = list
 #     default = ["sg-24076", "sg-90890", "sg-456789"]
 # }
+variable "AWS_REGION" {
+  default = "eu-central-1"
+}
 
 variable "AMIS" {
     type = map
