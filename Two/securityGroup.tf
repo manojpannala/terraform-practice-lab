@@ -6,7 +6,7 @@ data "aws_ip_ranges" "eu_central_ip_range" {
 resource "aws_security_group" "sg-custom_eu_central" {
   name = "sg-custon_eu_central"
 
-  ingress =  {
+  ingress =  [{
     cidr_blocks = data.aws_ip_ranges.eu_central_ip_range.cidr_blocks
     description = "value"
     from_port = "443"
@@ -16,7 +16,7 @@ resource "aws_security_group" "sg-custom_eu_central" {
     # security_groups = [ "value" ]
     # self = false
     to_port = "443"
-  } 
+  } ]
 
   tags = {
     CreateDate = data.aws_ip_ranges.eu_central_ip_range.create_date
