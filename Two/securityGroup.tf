@@ -7,7 +7,7 @@ resource "aws_security_group" "sg-custom_eu_central" {
   name = "custom_eu_central"
 
   ingress {
-    cidr_blocks = data.aws_ip_ranges.eu_central_ip_range.cidr_blocks
+    cidr_blocks = "172.31.10.0/16"
     description = "value"
     from_port = "443"
     protocol = "tcp"
