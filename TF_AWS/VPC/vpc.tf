@@ -109,3 +109,15 @@ resource "aws_route_table_association" "mrp-rtb-1-a" {
   subnet_id = aws_subnet.mrp_subnet_public-1.id
   route_table_id = aws_route_table.mrp-rtb.id
 }
+
+# Create Route Table Association
+resource "aws_route_table_association" "mrp-rtb-2-a" {
+  subnet_id = aws_subnet.mrp_subnet_public-2.id
+  route_table_id = aws_route_table.mrp-rtb.id
+}
+
+# Create Route Table Association
+resource "aws_route_table_association" "mrp-rtb-3-a" {
+  subnet_id = aws_subnet.mrp_subnet_public-3.id
+  route_table_id = aws_route_table.mrp-rtb.id
+}
