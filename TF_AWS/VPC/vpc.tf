@@ -91,3 +91,15 @@ resource "aws_internet_gateway" "mrp-igw" {
     Name = "mrp-igw"
   }
 }
+
+# Create Route Table
+resource "aws_route_table" "mrp-rtb" {
+  vpc_id = aws_vpc.mrp_vpc.id
+  route {
+      cidr_block = "0.0.0.0/0"
+      gateway_id = aws_internet_gateway.mrp-igw.id
+  }
+  tags = {
+     Name = "mrp-rtb-1"
+  }
+}
