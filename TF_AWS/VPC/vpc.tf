@@ -82,3 +82,12 @@ resource "aws_subnet" "mrp_subnet_private-3" {
     Name = "mrp_subnet_private-3"
   }
 }
+
+# Create Internet Gateway
+resource "aws_internet_gateway" "mrp-igw" {
+  vpc_id = aws_vpc.mrp_vpc.id
+  
+  tags = {
+    Name = "mrp-igw"
+  }
+}
