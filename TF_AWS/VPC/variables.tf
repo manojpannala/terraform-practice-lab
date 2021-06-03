@@ -16,14 +16,14 @@ variable "AMIS" {
     }
 }
 
-# variable "PATH_TO_PRIVATE_KEY" {
-#   default = "mrp_key"
-# }
+variable "PATH_TO_PRIVATE_KEY" {
+  default = "mrp_key"
+}
 
-# variable "PATH_TO_PUBLIC_KEY" {
-#   default = "mrp_key.pub"
-# }
+variable "PATH_TO_PUBLIC_KEY" {
+  default = "mrp_key.pub"
+}
 
-# variable "INSTANCE_USERNAME" {
-#   default = "ubuntu"
-# }
+variable "INSTANCE_USERNAME" {
+  default = "ubuntu"
+}
