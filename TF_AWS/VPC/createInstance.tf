@@ -17,6 +17,9 @@ resource "aws_instance" "MyFirstInstance" {
 
   # Add Userdata
   # user_data = file("installApache.sh")
+  
+  # Using Cloudinit
+  user_data = data.template_cloudinit_config.install_apache_config.rendered
 
   # Add VPC, SG
   vpc_security_group_ids = [aws_security_group.allow-ssh.id]
