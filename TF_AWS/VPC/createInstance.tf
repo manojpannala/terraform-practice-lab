@@ -18,7 +18,7 @@ resource "aws_instance" "MyFirstInstance" {
 
 # EBS Resource Creation
 resource "aws_ebs_volume" "ebs-volume-1" {
-  availability_zone = "eu-central-2a"
+  availability_zone = "eu-central-1a"
   size = 20
   type = "gp2"
   tags = {
