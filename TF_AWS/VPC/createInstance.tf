@@ -16,7 +16,7 @@ resource "aws_instance" "MyFirstInstance" {
   ]
 
   # Add Userdata
-  user_data = file("installApache.sh")
+  # user_data = file("installApache.sh")
 
   # Add VPC, SG
   vpc_security_group_ids = [aws_security_group.allow-ssh.id]
