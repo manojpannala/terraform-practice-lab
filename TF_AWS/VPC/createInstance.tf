@@ -18,10 +18,18 @@ resource "aws_instance" "MyFirstInstance" {
 
 # EBS Resource Creation
 resource "aws_ebs_volume" "ebs-volume-1" {
-  availability_zone = aws_vpc.mrp_vpc.id
+  availability_zone = "eu-central-2a"
   size = 20
   type = "gp2"
   tags = {
     Name = "Extra Volume Data"
   }
+}
+
+# Attach EBS Vol to EC2
+
+resource "aws_volume_attachment" "ebs-volume-1-attachment" {
+  device_name = "dev/xvdh"
+  volume_id = aws_ebs_volume.ebs-volume-1.id
+  instance_id = aws_instance.MyFirstInstance.id
 }
