@@ -9,6 +9,7 @@ resource "aws_instance" "MyFirstInstance" {
   ami           = lookup(var.AMIS, var.AWS_REGION)
   instance_type = "t2.micro"
   key_name      = aws_key_pair.mrp_key.key_name
+  disable_api_termination = true
 
   # Add Userdata
   user_data = file("installApache.sh")
