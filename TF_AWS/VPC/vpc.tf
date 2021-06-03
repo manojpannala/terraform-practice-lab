@@ -55,7 +55,7 @@ resource "aws_subnet" "mrp_subnet_private-1" {
   availability_zone = "eu-central-1a"
 
   tags = {
-    Name = "mrp_subnet_public-1"
+    Name = "mrp_subnet_private-1"
   }
 }
 
