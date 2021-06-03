@@ -29,7 +29,7 @@ resource "aws_ebs_volume" "ebs-volume-1" {
 # Attach EBS Vol to EC2
 
 resource "aws_volume_attachment" "ebs-volume-1-attachment" {
-  device_name = "dev/xvdh"
+  device_name = "/dev/xvdh"
   volume_id = aws_ebs_volume.ebs-volume-1.id
   instance_id = aws_instance.MyFirstInstance.id
 }
