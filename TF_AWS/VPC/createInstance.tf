@@ -27,20 +27,24 @@ resource "aws_instance" "MyFirstInstance" {
   }
 }
 
+output "public_ip" {
+  value = aws_instance.MyFirstInstance.public_ip
+}
+
 # EBS Resource Creation
-resource "aws_ebs_volume" "ebs-volume-1" {
-  availability_zone = "eu-central-1c"
-  size = 20
-  type = "gp2"
-  tags = {
-    Name = "Extra Volume Data"
-  }
-}
+# resource "aws_ebs_volume" "ebs-volume-1" {
+#   availability_zone = "eu-central-1c"
+#   size = 20
+#   type = "gp2"
+#   tags = {
+#     Name = "Extra Volume Data"
+#   }
+# }
 
-# Attach EBS Vol to EC2
+# # Attach EBS Vol to EC2
 
-resource "aws_volume_attachment" "ebs-volume-1-attachment" {
-  device_name = "/dev/xvdh"
-  volume_id = aws_ebs_volume.ebs-volume-1.id
-  instance_id = aws_instance.MyFirstInstance.id
-}
+# resource "aws_volume_attachment" "ebs-volume-1-attachment" {
+#   device_name = "/dev/xvdh"
+#   volume_id = aws_ebs_volume.ebs-volume-1.id
+#   instance_id = aws_instance.MyFirstInstance.id
+# }
