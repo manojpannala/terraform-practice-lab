@@ -10,7 +10,7 @@ resource "aws_instance" "MyFirstInstance" {
   availability_zone = "eu-central-1a"
   instance_type = "t2.micro"
   key_name      = aws_key_pair.mrp_key.key_name
-  iam_instance_profile = aws_iam_role_policy.s3-mrp-bucket-role-instanceprofile.name
+  iam_instance_profile = aws_iam_instance_profile.s3-mrp-bucket-role-instanceprofile.name
 
   tags = {
     Name = "custom_instance"
