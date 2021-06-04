@@ -26,7 +26,7 @@ resource "aws_autoscaling_group" "mrp-autoscaling" {
   force_delete              = true
 #   placement_group           = aws_placement_group.test.id
   launch_configuration      = aws_launch_configuration.mrp-launchconfig.name
-  vpc_zone_identifier       = ["eu-central-1a", "eu-central-1b"]
+  vpc_zone_identifier       = ["subnet-a6c342ea", "subnet-0ca5e166"]
 
   tag {
     key                 = "Name"
