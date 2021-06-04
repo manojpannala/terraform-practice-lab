@@ -51,3 +51,10 @@ resource "aws_iam_role_policy" "s3-mrp-bucket-role-policy" {
     Name = "s3-mrp-bucket-role-policy"
   }
 }
+
+# Instance Identifier
+
+resource "aws_iam_instance_profile" "s3-mrp-bucket-role-instanceprofile" {
+    name = "s3-mrp-bucket-role"
+    role = aws_iam_role.s3-mrp-bucket-role.name
+}
