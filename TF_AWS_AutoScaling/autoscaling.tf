@@ -7,6 +7,13 @@ resource "aws_launch_configuration" "mrp-launchconfig" {
     key_name = aws_key_pair.mrp_key.key_name
 }
 
+#Generate Key
+resource "aws_key_pair" "mrp_key" {
+    key_name = "mrp_key"
+    public_key = file(var.PATH_TO_PUBLIC_KEY)
+}
+
+
 # AutoScaling Group
 
 resource "aws_autoscaling_group" "mrp-autoscaling" {
