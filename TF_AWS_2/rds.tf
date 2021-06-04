@@ -42,3 +42,7 @@ resource "aws_db_instance" "default" {
     Name = "mrp-mariadb"
   }
 }
+
+output "rds" {
+  value = aws_db_instance.mrp-mariadb.endpoint
+}
