@@ -46,7 +46,7 @@ resource "aws_iam_role_policy" "s3-mrp-bucket-role-policy" {
       },
     ]
   })
-
+}
 # Instance Identifier
 
 resource "aws_iam_instance_profile" "s3-mrp-bucket-role-instanceprofile" {
