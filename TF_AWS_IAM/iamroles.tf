@@ -40,9 +40,9 @@ resource "aws_iam_role_policy" "s3-mrp-bucket-role-policy" {
             "arn:aws:s3:::mrp-tf-bucket-56",
             "arn:aws:s3:::mrp-tf-bucket-56/*",
         ]
-        Principal = {
-          Service = "ec2.amazonaws.com"
-        }
+        # Principal = {
+        #   Service = "ec2.amazonaws.com"
+        # }
       },
     ]
   })
