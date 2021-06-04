@@ -18,7 +18,7 @@ resource "aws_instance" "MyFirstInstance" {
 
   # Add VPC, SG
   vpc_security_group_ids = [aws_security_group.allow-ssh.id]
-  subnet_id = aws_subnet.mrp_subnet_public-3.id
+  subnet_id = aws_subnet.mrp_subnet_public-1.id
 
   tags = {
     Name = "custom_instance"
