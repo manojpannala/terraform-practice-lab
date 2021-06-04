@@ -2,7 +2,9 @@
 # Create a new load balancer
 resource "aws_elb" "mrp-elb" {
   name               = "mrp-elb"
-  availability_zones = ["eu-central-1a", "eu-central-1b", "eu-central-1c"]
+  subnets            = [aws_subnet.mrpvpc-public-1.id, aws_subnet.mrpvpc-public-2.id]
+  security_groups    = [aws_security_group.mrp-elb-securitygroup.id]
+#   availability_zones = ["eu-central-1a", "eu-central-1b", "eu-central-1c"]
 
 #   access_logs {
 #     bucket        = "foo"
