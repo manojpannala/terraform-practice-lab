@@ -27,3 +27,13 @@ resource "aws_autoscaling_group" "mrp-autoscaling" {
     propagate_at_launch = true
   }
 }
+
+# AutoScaling Configuration Policy - Security Alarm
+resource "aws_autoscaling_policy" "mrp-cpu-policy" {
+  name                   = "mrp-cpu-policy"
+  scaling_adjustment     = 1
+  adjustment_type        = "ChangeInCapacity"
+  cooldown               = 200
+  autoscaling_group_name = aws_autoscaling_group.mrp-autoscaling.name
+  policy_type = "SimpleScaling"
+}
