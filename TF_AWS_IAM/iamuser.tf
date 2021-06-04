@@ -21,8 +21,8 @@ resource "aws_iam_group_membership" "admin-users" {
 
 # Policy for AWS Group
 resource "aws_iam_group_policy_attachment" "admin-users-attach" {
-    name = "admin-users-attach"
-    group = [aws_iam_group.admingroup.name]
+    # name = "admin-users-attach"
+    group = aws_iam_group.admingroup.name
     policy_arn = "arn:aws:iam::687326881945:user/kops"
   
 }
