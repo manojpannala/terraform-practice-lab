@@ -29,7 +29,7 @@ resource "aws_iam_role_policy" "s3-mrp-bucket-role-policy" {
 
   # Terraform's "jsonencode" function converts a
   # Terraform expression result to valid JSON syntax.
-  assume_role_policy = jsonencode({
+  policy = jsonencode({
     Version = "2012-10-17"
     Statement = [
       {
