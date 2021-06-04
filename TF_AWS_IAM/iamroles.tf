@@ -26,7 +26,7 @@ resource "aws_iam_role" "s3-mrp-bucket-role" {
 
 resource "aws_iam_role_policy" "s3-mrp-bucket-role-policy" {
   name = "s3-mrp-bucket-role-policy"
-
+  role = aws_iam_role.s3-mrp-bucket-role.id
   # Terraform's "jsonencode" function converts a
   # Terraform expression result to valid JSON syntax.
   policy = jsonencode({
