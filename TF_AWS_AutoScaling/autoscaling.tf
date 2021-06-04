@@ -24,7 +24,7 @@ resource "aws_autoscaling_group" "mrp-autoscaling" {
   health_check_type         = "EC2"
 #   desired_capacity          = 4
   force_delete              = true
-  placement_group           = aws_placement_group.test.id
+#   placement_group           = aws_placement_group.test.id
   launch_configuration      = aws_launch_configuration.mrp-launchconfig.name
   vpc_zone_identifier       = ["eu-central-1a", "eu-central-1b"]
 
