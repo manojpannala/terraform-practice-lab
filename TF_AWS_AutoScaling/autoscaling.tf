@@ -8,3 +8,22 @@ resource "aws_launch_configuration" "mrp-launchconfig" {
 }
 
 # AutoScaling Group
+
+resource "aws_autoscaling_group" "mrp-autoscaling" {
+  name                      = "mrp-autoscaling"
+  max_size                  = 2
+  min_size                  = 1
+  health_check_grace_period = 200
+  health_check_type         = "EC2"
+#   desired_capacity          = 4
+  force_delete              = true
+  placement_group           = aws_placement_group.test.id
+  launch_configuration      = aws_launch_configuration.mrp-launchconfig.name
+  vpc_zone_identifier       = ["eu-central-1a", "eu-central-1b"]
+
+  tag {
+    key                 = "Name"
+    value               = "Custom EC2 Instance"
+    propagate_at_launch = true
+  }
+}
