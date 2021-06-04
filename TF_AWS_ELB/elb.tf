@@ -44,4 +44,3 @@ resource "aws_elb" "mrp-elb" {
   }
 }
 
-# Security Group for AWS ELB
