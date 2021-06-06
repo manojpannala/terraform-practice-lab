@@ -1,5 +1,5 @@
 module "dev-vpc" {
-    source = "../TF_Modules"
+    source = "../"
     
     vpcname = "dev01-vpc"
     cidr = "10.0.2.0/24"
