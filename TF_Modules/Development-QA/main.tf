@@ -8,6 +8,6 @@ module "dev-qa-vpc" {
     enable_classiclink_dns_support = "false"
     enable_ipv6 = "false"
     vpcenvironment = "Development-QA-Engineering"
-    AWS_REGION = "eu-west-1"
+    AWS_REGION = "eu-central-1"
   
 }
