@@ -1,6 +1,6 @@
 variable "AWS_REGION" {
     type        = string
-    default     = "us-east-2"
+    default     = "eu-central-1"
 }
 
 variable "vpcname" {
